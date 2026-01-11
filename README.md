@@ -57,7 +57,7 @@ The robot consists of **six primary subsystems**, each modeled and validated ind
 - CNC laser-cut or waterjet-cut aluminum plates
 - Spacers + gussets create a rigid torsion box
 
-### 4.2 Geometry (starting point)
+### 4.2 Geometry
 - Deck size: **4 ft × 8 ft** (1219 mm × 2438 mm)
 - Frame depth: ~250–350 mm (torsion depth matters for stiffness)
 - Battery and heavy electronics mounted **low** between plates for stability
@@ -94,7 +94,7 @@ The robot consists of **six primary subsystems**, each modeled and validated ind
 - Bearings at all rotational joints
 - Feet include replaceable compliant pads
 
-### 5.3 Geometry (nominal starting point)
+### 5.3 Geometry
 - Thigh length: ~500–650 mm
 - Shin length: ~500–650 mm
 - Nominal clearance: ~300–450 mm
@@ -114,32 +114,26 @@ The robot consists of **six primary subsystems**, each modeled and validated ind
 
 ---
 
-## 6) Actuation System (re-scaled for 400 lb payload)
+## 6) Actuation System
 
-### 6.1 What the payload change implies
-Designing for **400 lb payload** (not total mass) pushes joint torque and structure up substantially. Expect:
-- Higher peak joint torques (especially hip pitch and knee)
-- Heavier actuators and stronger gear reductions
-- More battery energy required for a similar runtime
-
-### 6.2 Architecture
+### 6.1 Architecture
 - Fully electric
 - **Integrated robotic joint modules** (motor + gearbox + encoder)
 - Distributed torque / current limiting for safety
 
-### 6.3 Torque scale (design targets)
+### 6.2 Torque Scale
 - Expect **knee + hip pitch** to require on the order of **300–700 N·m peak** per joint depending on leg length, stance geometry, and dynamic loads.
 - Hip ab/ad generally lower, but still substantial for lateral stability.
 
 > The CAD agent should treat these as sizing targets and leave mount interfaces adaptable until final actuator selection.
 
-### 6.4 Gear strategy
+### 6.3 Gear Strategy
 - Primary recommendation: **robust planetary** or **cycloidal** inside the joint module.
   - Planetary: easiest to source, straightforward integration
   - Cycloidal: better shock tolerance but more complexity
 - Avoid extreme ratios that eliminate compliance.
 
-### 6.5 Actuation BOM (Total)
+### 6.4 Actuation BOM
 - Joint modules (12×)
 - Encoder feedback integrated in each module
 - Motor driver(s) (distributed) sized for continuous walking under heavy load
@@ -149,7 +143,7 @@ Designing for **400 lb payload** (not total mass) pushes joint torque and struct
 
 ---
 
-## 7) Power System (re-scaled)
+## 7) Power System
 
 ### 7.1 Electrical Architecture
 - DC bus for traction/actuation
@@ -222,7 +216,7 @@ Designing for **400 lb payload** (not total mass) pushes joint torque and struct
 
 ### 9.1 Deck
 - Flat deck mounted atop frame
-- Tie-down points only (first version)
+- Tie-down points for cargo securing
 
 ### 9.2 Human rider case
 - A rider is a payload within the 400 lb limit
@@ -253,7 +247,7 @@ This project treats robot design like software:
 - automated validation
 - repeatable export packages for machine shops
 
-**Corrected central requirement:** the Pack Mule must carry **400 lb payload**, and all design choices (mass, actuators, battery, structure) derive from that payload capacity.
+All design choices (mass, actuators, battery, structure) derive from the **400 lb payload** capacity requirement.
 
 ---
 
