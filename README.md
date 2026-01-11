@@ -1,5 +1,14 @@
 # Pack Mule Quadruped Robot
 
+## 0) Meta Principles
+
+* Linux brain
+* 400 lb payload on deck
+* Design process tuned for AI coding agents: TDD-style CAD development. "Robots building robots."
+* Parametric CAD, constant validation
+
+Other parameters derive from this core.
+
 ## 1) Core Mission
 
 **Mission statement**
