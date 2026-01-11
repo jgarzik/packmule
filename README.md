@@ -233,32 +233,7 @@ Designing for **400 lb payload** (not total mass) pushes joint torque and struct
 
 ---
 
-## 10) CAD & AI Agent Workflow (Critical)
-
-### 10.1 Design Rules
-- **All geometry is parametric**
-- **No hard-coded dimensions in sketches**
-- Single source of truth: `SS_Params` spreadsheet (or `params.yaml` feeding it)
-
-### 10.2 CAD Organization
-- Top-down skeleton
-- Master plan & side sketches define layout
-- Subsystems reference datums, not each other directly
-
-### 10.3 Test-Driven CAD
-Every change must run automated checks:
-- Recompute without errors
-- Collision & interference tests
-- Minimum clearance rules
-- Mass + center-of-mass estimate
-- Export artifacts (STEP, DXF, BOM CSV)
-- Screenshots (iso/top/side) for visual diffs
-
-A CAD change is **invalid** unless tests pass.
-
----
-
-## 11) Manufacturing Philosophy (No Welding)
+## 10) Manufacturing Philosophy (No Welding)
 
 - Prefer laser/waterjet-cut 2D parts
 - Use spacers/standoffs and gussets for stiffness
@@ -270,7 +245,7 @@ A CAD change is **invalid** unless tests pass.
 
 ---
 
-## 12) Summary
+## 11) Summary
 
 This project treats robot design like software:
 - deterministic builds
@@ -279,4 +254,18 @@ This project treats robot design like software:
 - repeatable export packages for machine shops
 
 **Corrected central requirement:** the Pack Mule must carry **400 lb payload**, and all design choices (mass, actuators, battery, structure) derive from that payload capacity.
+
+---
+
+## 12) Development Process
+
+See **[process.md](process.md)** for the complete CAD & Agent Workflow, including:
+- FreeCAD as deterministic compiler
+- Repository architecture
+- The agent iteration loop
+- Interface and invariant definitions
+- Test-driven CAD validation pipeline
+- Mass and physics checks
+- Phased development strategy
+- LLM prompting discipline
 
